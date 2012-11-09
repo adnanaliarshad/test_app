@@ -1,0 +1,79 @@
+.b-view_content_header_img{:style => "background: url('#{asset_path @contest['web']['web_banner']}') no-repeat center 0;"}
+  %a.b-view_content_header_link{:href => users_path_builder(:users_new),
+    :style => "background: url('#{asset_path @contest['web']['enter_button']}') no-repeat center center;"}
+%a.b-slides_change-view{:href => users_path_builder(:gallery)}
+  Gallery View
+.group
+  #carousel.jcarousel-skin-tango
+    .jcarousel-clip-wrapper
+      .jcarousel-clip
+        %ul
+          %li.jcarousel-item
+            %img{:alt => "", :src => "#{@entry['Entry']['Photo']['medium_pic']}"}/
+      - unless @entry['Entry']['next_entry_id'].nil?
+        .jcarousel-prev{:url =>  users_path_builder(:next_slide, :id => @entry['Entry']['next_entry_id']) }
+      - else
+        .jcarousel-prev.jcarousel-prev-disabled
+      - unless @entry['Entry']['prev_entry_id'].nil?
+        .jcarousel-next{:url => users_path_builder(:next_slide, :id => @entry['Entry']['prev_entry_id'])}
+      - else
+        .jcarousel-next.jcarousel-next-disabled
+  .b-slides_social{:style => 'display: block;'}
+    .b-slides_text
+      = @contest['slide_question']
+    .b-slides_rating
+      - vote = @entry["Entry"]["User"]["already_voted"].to_i == 0 ? false : true
+      - if vote == false
+        - unless @entry["Entry"]["user_id"].nil?
+          - love_it = users_path_builder(:vote_entry, {:session_id => @current_user.votigo_session_id, :user_id => @entry["Entry"]["user_id"],:entry_id => @entry["Entry"]["entry_id"], :vote_type => "love_it"})
+          - leave_it = users_path_builder(:vote_entry, {:session_id => @current_user.votigo_session_id, :user_id => @entry["Entry"]["user_id"],:entry_id => @entry["Entry"]["entry_id"], :vote_type => "leave_it"})
+        - else
+          - love_it = users_path_builder(:vote_entry, {:entry_id => @entry["Entry"]["entry_id"], :vote_type => "love_it"})
+          - leave_it = users_path_builder(:vote_entry, {:entry_id => @entry["Entry"]["entry_id"], :vote_type => "leave_it"})
+        = link_to image_tag('slides/thumbs-up.png', :class => 'rate_image'),love_it
+        = link_to image_tag('slides/thumbs-down.png', :class => 'rate_image'),leave_it
+      .rate{:style => "display:none"}
+        %span.rate_up<>
+          - vote_up = @entry["Entry"]["vote_count"].to_f
+          - vote_down = @entry["Entry"]["leave_it_count"].to_f
+          - vote = (vote_up+vote_down == 0) ? 0 : ((vote_up/(vote_up+vote_down))*100).to_i
+          = "#{vote}%"
+        %span.rate_down<>
+          - vote = (vote_up+vote_down == 0) ? 0 : ((vote_down/(vote_up+vote_down))*100).to_i
+          = "#{vote}%"
+    .b-slides_rate_loader
+      = image_tag 'slides/loading.gif', :alt => 'Loading...'
+    #b-slides_share
+.b-info{:style => 'display: block;'}
+  %span.b-info_entry_id
+  %h3.b-info_entryname
+    = @entry['Entry']["entryname"]
+  %P.b-info_description
+    = @entry['Entry']["Photo"]["description"]
+  - if @entry['Entry']['User']['username'] != "NA"
+    .b-info_user-info
+      %p
+        Uploaded by:
+        = "#{@entry['Entry']['User']['username'] || @entry['Entry']['username']}"
+        %br
+        = image_tag "http://www.ivillage.com/photo/get-avatar?person_id=#{@entry['Entry']['User']['social_id']}&width=50&height=50", :alt => 'Avatar'
+
+:javascript
+  var interval = setInterval(function(){
+    if(typeof gigya != "undefined") {
+      clearInterval(interval);
+
+      var act = new gigya.socialize.UserAction();
+      //act.setUserMessage("This is the user message");
+      act.setTitle("#{@entry['Entry']['entryname']}");
+      act.setLinkBack(document.location.href);
+      act.setDescription("#{@entry['Entry']["Photo"]["description"]}");
+      //act.addActionLink("Watch this movie", "http://vimeo.com/24496773");
+      act.addMediaItem({ type: 'image', src: "#{@entry['Entry']['Photo']['medium_pic']}", href: document.location.href });
+      var showShareBarUI_params=
+      { containerID: 'b-slides_share', shareButtons: 'Share', userAction: act }
+
+      gigya.socialize.showShareBarUI(showShareBarUI_params);
+    }
+
+  }, 1000);

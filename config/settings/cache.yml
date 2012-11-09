@@ -1,0 +1,84 @@
+version: v2012.06.27
+
+tags:
+  types:
+    - 
+      name: votigo
+      description:
+    -
+      name: ivillage
+      description:
+  items:
+    -
+      name: application
+      description:
+    -
+      name: users
+      description:
+    -
+      name: session
+      description:
+    -
+      name: slides
+      description:
+  pages:
+    -
+      name: application-init
+      description:
+    - 
+      name: slides-index
+      description:
+    - 
+      name: slides-gallery
+      description:
+    - 
+      name: slides-slide
+      description:
+    -
+      name: slides-slides
+      description:
+    -
+      name: slides-gallery
+      description:
+    -
+      name: users-new
+      description:
+    -
+      name: users-welcome
+      description:
+    -
+      name: users-subscriptions
+      description:
+    -
+      name: session-ivillage-forms
+      description:
+    -
+      name: slides-slide-top
+      description:
+    -
+      name: slides-slides-top
+      description:
+    -
+      name: slides-gallery-page
+      description:
+    -
+      name: slides-gallery-next-page
+      description:
+    -
+      name: users-new-page
+      description:
+    -
+      name: users-welcome-page
+      description:
+    -
+      name: users-welcome-page-fb
+      description:
+    -
+      name: slides-gallery
+      description:
+    -
+      name: slides_single-entry
+      description:
+    -
+      name: slides_single-vote-entry
+      description:

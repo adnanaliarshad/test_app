@@ -1,0 +1,1 @@
+writeCapture.proxyGetElementById = true;

@@ -1,0 +1,13 @@
+.b-view_container
+  - if params[:signed_request].nil? and params[:facebook].nil?
+    - tags = %w{votigo slides-slides slides-slides-top}
+    = astro_cache("#{@contest['name']}_slides_page", :tags => tags, :expires_in => 20.minutes) do
+      = render "/framework/block/slides/b_slides"
+  - else
+    - tags = %w{votigo slides-slides slides-slides-top}
+    = astro_cache("#{@contest['name']}_fb_slides_page", :tags => tags, :expires_in => 20.minutes) do
+      %h2.b-view_heading.profile
+        Share Your Best Family Vacation Photo!
+      %p.b-users_upload_description
+        Share your favorite summer photo by September 9, 2012 and you could win a four-night, five-day trip for four to a premier Comfort Inn location. It's simple: Upload a picture here, and tell your friends and family to vote for your entry.
+      = render "/framework/block/slides/facebook/b_slides_fb"

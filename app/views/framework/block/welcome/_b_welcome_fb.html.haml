@@ -1,0 +1,18 @@
+.b-view_container.wlc{:style => "padding: 34px 29px;"}
+  %h2.b-welcome_heading{:style => "padding-top:0"}
+    = @contest["fb"]["welcome_heading"]
+  .b-welcome_content{:style => "background: url('#{asset_path @contest['fb']['welcome_bg']}') no-repeat center top white;"}
+    - url = users_path_builder(:users_new, {:facebook => true })
+    = link_to( image_tag("slides/enter-now.png"),url,
+              :class => "b-welcome_enter-now_fb_#{@contest_name}")
+    - url = users_path_builder(:gallery, {:facebook => true })
+    = link_to(image_tag("slides/vote-for-your-fave.png"), url,
+              :class => "b-welcome_vote-fav_fb_#{@contest_name}")
+
+  .b-welcome_description
+    %h3.b-welcome_heading How to Enter
+    = @contest['fb']['text_how_enter'].html_safe
+    %h3.b-welcome_heading How it Works
+    = @contest['fb']['text_how_works'].html_safe
+    %h3.b-welcome_heading What You Can Win
+    = @contest['fb']['text_what_win'].html_safe

@@ -1,0 +1,20 @@
+- %w(error notice).each do |type|
+  - if flash[type.to_sym]
+    .b-notice
+      - if flash[type.to_sym].is_a?(Hash)
+        - flash[type.to_sym].each do |name, messages|
+          - messages.each do |message|
+            .b-notice_item_wrapper
+              %div{ :class => "b-notice_item #{type}"}
+                %p= "#{name} #{message}"
+      - elsif flash[type.to_sym].is_a?(Array)
+        - flash[type.to_sym].each do |message|
+          .b-notice_item_wrapper
+            %div{ :class => "b-notice_item #{type}"}
+              %p= message
+      - elsif flash[type.to_sym].is_a?(String)
+        .b-notice_item_wrapper
+          %div{ :class => "b-notice_item #{type}"}
+            %p= flash[type.to_sym]
+
+      = javascript_tag "jQuery('.b-notice:last').b_notice();"

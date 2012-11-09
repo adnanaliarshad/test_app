@@ -1,0 +1,22 @@
+.b-view_container
+  .b-view_content
+    - unless params[:signed_request].nil? and params[:facebook].nil?
+      %h2.b-view_heading.profile
+        = @contest['entry_title']
+      %p.b-users_upload_description
+        = @contest['entry_text']
+    - if params[:signed_request].nil? and params[:facebook].nil?
+      .b-view_content_header_img{:style => "background: url('#{asset_path @contest['web']['web_banner']}') no-repeat center 0;"}
+        %a.b-view_content_header_link{:href => users_path_builder(:users_new),
+        :style => "background: url('#{asset_path @contest['web']['enter_button']}') no-repeat center center;"}
+      - name = "#{@contest['name']}_gallery_#{@current_page}_#{@total_pages}_#{session[:sort]}_#{session[:category]}"
+      - tags = %w{votigo slides-gallery slides-gallery-page}
+      = astro_cache(name, :tags => tags, :expires_in => 20.minutes) do
+        = render "/framework/block/gallery/b_gallery"
+    - else
+      - name = "#{@contest['name']}_gallery_#{@current_page}_#{@total_pages}_#{session[:sort]}_#{session[:category]}_fb"
+      - tags = %w{votigo slides-gallery slides-gallery-page}
+      = astro_cache(name, :tags => tags, :expires_in => 20.minutes) do
+        .b-view_content_header_img{:style => "background: url('#{asset_path @contest['fb']['fb_banner']}') no-repeat center 0;"}
+          %a.b-view_content_header_link{:href => users_path_builder(:users_new, {:facebook => true})}
+        = render "/framework/block/gallery/facebook/b_gallery_fb"

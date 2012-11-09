@@ -1,0 +1,8 @@
+= form_tag '/uploadimage', :multipart => true do
+  = entry_name_field
+  = image_description_field
+  = hidden_field_tag 'contest_id', @contest_id
+  = hidden_field_tag 'user_id', @user["id"]
+  = hidden_field_tag 'session_id', @user["session_id"]
+  = image_file_field
+  = submit_tag

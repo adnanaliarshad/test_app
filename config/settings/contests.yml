@@ -1,0 +1,72 @@
+contests:
+  endless-summer:
+    name: "endless-summer"
+    tracking_name: "EndlessSummer"
+    title: "Share Your Best Family Vacation Photo"
+    entry_title: "Share Your Best Family Vacation Photo"
+    entry_text: "Share your favorite summer photo by September 9, 2012 and you could win a four-night, five-day trip for four to a premier Comfort Inn location. It's simple: Upload a picture here, and tell your friends and family to vote for your entry."
+    bottom_rules: "NO PURCHASE NECESSARY. Void where prohibited. Open only to permanent, legal residents of the 50 US or DC who are
+  eighteen (18) or older. Begins July 23, 2012 at 9:00 A.M. ET and ends September 9, 2012 at 11:59 P.M. ET. Limit one
+  (1) entry per person or email address. Prize restrictions apply. To enter, and for Official Rules and prize details,
+  go
+  <a href='http://www.ivillage.com/ivillage-best-family-vacation-photo-upload-contest-official-rules/8-a-474531'>here</a>.
+  Sponsor: iVillage, LLC."
+    privacy_policy: "http://www.choicehotels.com/en/privacypolicy"
+    brought_by: "Brought to you by Comfort Inn ©"
+    welcome_slider: true
+    page_title: "Your Best Family Vacation Photo Ever - iVillage"
+    slide_question: "Is this the most gorgeous vacation photo, ever?"
+    contest_id:
+      development: 10015
+      test: 10015
+      production: 28460
+      production-stage: 28460
+    web:
+      web_bg: "contests/endless-summer/bg-famvac.jpg"
+      web_bg_repeat: "no-repeat"
+      form_bg: "contests/endless-summer/form-bg.jpg"
+      bg_color: "#FEE9BE"
+      slider_bg_color: "#FCDCA1"
+      web_banner: "contests/endless-summer/enter-now.png"
+      enter_button: "contests/endless-summer/enter-button.png"
+      top_header: "contests/endless-summer/family-vacation.jpg"
+      welcome_bg: "contests/endless-summer/welcome-bg.jpg"
+      welcome_slider: "contests/endless-summer/slider.jpg"
+      welcome_slider_arrow: "contests/endless-summer/vote.png"
+      welcome_slider_arrow_link: "/slides"
+      welcome_heading: "Vote For Your Favorite Family Vacation Photo"
+      text_how_enter: "<p>Upload your favorite family vacation photo by 11:59 P.M. EST on September 9, 2012 in one of the following categories: road trip, beach trip or amusement park adventure. To be eligible to win the grand prize, you must be 18 years of age or older. No purchase necessary. See <a href='http://www.ivillage.com/ivillage-best-family-vacation-photo-upload-contest-official-rules/8-a-474531'>here</a> for official rules.</p>"
+      text_how_works: "<p>Once you've uploaded your photo, send the link to everyone you know! Make sure they vote for your winning shot! You can vote on as many photos as you like, once per day, and user voting continues until 11:59 P.M. EST on September 9, 2012. We will then announce the grand prize winner on or about September 12, 2012 on iVillage's homepage.</p>"
+      text_what_win: "<p>Each category winner will receive the ultimate family beach bag filled with everything from Fandango tickets and summer beauty products to new release DVDs and a digital camera. The grand prize winner will win a four-night, five day trip for four to a premier Comfort Inn Location.</p><p><a href='/photo-contests/endless-summer/new'>Enter</a> your best family vacation photo ever for a chance to win!</p>"
+    fb:
+      development:
+        app_id: ""
+        app_secret: "90c47905258797968d2f9f2ffb77663e"
+        callback: "//local.ivillage.com:3000/photo-contests/hair/redirect"
+        redirect: ""
+      test:
+        app_id: ""
+        app_secret: ""
+        callback: "https://www.ivillage.com/photo-contests/hair/redirect"
+        redirect: ""
+      production:
+        app_id: ""
+        app_secret: ""
+        callback: "https://www.ivillage.com/photo-contests/hair/redirect"
+        redirect: ""
+      fb_bg: "slides/fb-bg.jpg"
+      fb_banner: "framework/block/gallery/banner.png"
+      fb_button: "framework/block/gallery/enter.png"
+      welcome_bg: "contests/endless-summer/welcome-bg.jpg"
+      text_how_enter: "<p>Upload your favorite family vacation photo by 11:59 P.M. EST on September 9, 2012 in one of the following categories: road trip, beach trip or amusement park adventure. To be eligible to win the grand prize, you must be 18 years of age or older. No purchase necessary.See <a href='http://www.ivillage.com/ivillage-best-family-vacation-photo-upload-contest-official-rules/8-a-474531'> here </a>for official rules.</p>"
+      text_how_works: "<p>Once you've uploaded your photo, send the link to everyone you know! Make sure they vote for your winning shot! You can vote on as many photos as you like, once per day, and user voting continues until 11:59 P.M. EST on September 9, 2012. We will then announce the grand prize winner on or about September 12, 2012 on iVillage's homepage.</p>"
+      text_what_win: "<p>Each category winner will receive the ultimate family beach bag filled with everything from Fandango tickets and summer beauty products to new release DVDs and a digital camera. The grand prize winner will win a four-night, five day trip for four to a premier Comfort Inn Location.</p><p><a href='/photo-contests/endless-summer/new'>Enter </a>your best family vacation photo ever for a chance to win!</p>"
+    show_category: "true"
+    newsletters: [ ["Big Kids Must Read", 39], ["Today’s Big Story", 33], ["Family Meals", 7], ["Free & Fun Stuff", 31], ["Special Offers from iVillage & its sponsors", 30], ["Yes, I’d like information on Choice Hotels", 409] ]
+    dart_ads:
+      tile: "votigo_famvaca_ugcphoto_tile"
+      sub: "famvaca"
+    omniture:
+      titletag: "Your Best Family Vacation Photo Ever - iVillage"
+      section:  "iVillage:Contest:Endless-Summer"
+      dartZone: "nbcu.ivillage/contest_endless_summer_"

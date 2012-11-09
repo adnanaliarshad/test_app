@@ -1,0 +1,294 @@
+$input-medium: 158px;
+
+.b-facebook {
+  width: 810px;
+  height: 883px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.b-facebook_halloween-costumes {
+  color: white;
+}
+
+.b-users_profile {
+  background: url("framework/block/profile/form-bg.jpg") no-repeat scroll 0 0 #FFFFFF;
+  color: #333333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  height: 777px;
+  line-height: 16px;
+  padding: 30px 150px 75px;
+  position: relative;
+}
+
+.b-facebook .b-users_profile {
+  background: none !important;
+  padding: 30px 63px 90px;
+}
+
+.b-profile_row {
+  margin-bottom: 8px;
+}
+.b-profile_row:before, .b-profile_row:after {
+  content: "";
+  display: table;
+}
+.b-profile_row:after {
+  clear: both;
+}
+
+.b-profile_row_label {
+  float: left;
+  padding-top: 5px;
+  text-align: right;
+  text-transform: uppercase;
+  width: 178px;
+}
+
+.b-profile_row_label_halloween-costumes {
+    color: white !important;
+}
+
+.b-profile_agree .b-profile_row_label {
+  text-transform: none;
+  width: auto;
+}
+
+.b-profile_row_field {
+  float: left;
+  margin-left: 20px;
+  //width: $input-medium;
+}
+
+.b-profile_row_field_272_text, .b-profile_row_field_60_text {
+  color: #555555;
+  display: inline-block;
+  font-size: 13px;
+  height: 14px;
+  line-height: 14px;
+  margin-bottom: 0;
+  padding: 4px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  width: $input-medium - 10px;
+}
+
+.b-profile_description .b-profile_row_field_272_text, .b-profile_entryname .b-profile_row_field_272_text {
+  width: 250px;
+}
+
+.b-profile_row_submit {
+  margin-left: 198px;
+}
+
+.b-profile_row input[type="submit"] {
+  background: url("framework/block/profile/submit-button.png") no-repeat 0 0;
+  width: 133px;
+  height: 24px;
+  border: 0 none;
+  text-indent: -9999px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+}
+
+.b-facebook .b-profile_row input[type="submit"] {
+  background: url("framework/block/profile/submit-bt.png") no-repeat 0 0;
+  width: 112px;
+  height: 26px;
+}
+b-users_upload .b-profile_row input[type="submit"] {
+  background: url("framework/block/profile/submit.png") no-repeat 0 0;
+  width: 133px;
+  height: 24px;
+  border: 0 none;
+  text-indent: -9999px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+}
+.b-profile_row input[type="submit"]:hover {
+}
+
+.b-profile_row input[type="file"] {
+  width: 240px;
+}
+
+.b-profile_row input[type="checkbox"] {
+  vertical-align: middle;
+  margin-top: 2px;
+}
+
+.b-profile_error_wrapper {
+  list-style-type: none;
+  margin-left: 10px;
+  float: left;
+  padding-top: 5px;
+}
+
+.b-profile_image .b-profile_error_wrapper {
+ /* margin-left: 197px;
+  clear: both; */
+}
+
+.b-profile_agree .b-profile_error_wrapper {
+  padding-top: 6px;
+}
+
+//.b-profile_password .b-profile_error_wrapper,
+//.b-profile_password_confirmation .b-profile_error_wrapper {
+//  margin-left: 197px;
+//  clear: both;
+//}
+
+.m-validations_error_email_unique-email, .m-validations_error_nick_unique-nick {
+  margin-left: 188px;
+}
+
+.b-profile_error {
+  display: none;
+  color: #B94A48;
+}
+
+.b-profile_row_field select {
+  color: #555555;
+  font-size: 13px;;
+  line-height: 14px;
+  padding: 2px;
+  border: 1px solid #CCCCCC;
+  height: 24px;
+  width: $input-medium;
+}
+
+.b-profile_image .b-profile_row_field {
+  width: 240px;
+}
+
+.b-profile_birth_date .b-profile_row_field {
+  width: 260px;
+}
+.b-profile_gender .b-profile_row_field {
+  width: 120px;
+}
+.b-profile_birth_date .b-profile_row_field select[id*="month"],  .b-profile_row_field select[id*="gender"]{
+  width: 120px;
+}
+.b-profile_birth_date .b-profile_row_field select[id*="day"], .b-profile_birth_date .b-profile_row_field select[id*="year"] {
+  width: 65px;
+  margin-left: 5px;
+}
+
+.b-profile_row_checkbox-group {
+  width: 300px;
+  float: left;
+}
+.b-profile_required_star {
+  color: #B94A48;
+  padding-right: 4px;
+}
+
+.m-validations_spinner {
+  width: 24px;
+  height: 24px;
+  background: url("framework/block/gallery/loading-small.gif") no-repeat 0 0 #FFFFFF;
+  display: none;
+  float: right;
+  margin-left: 10px;
+}
+
+.b-users_signup, .b-users_upload {
+  background: url("slides/loading-black.gif") no-repeat -9999px -9999px;
+}
+.b-users_upload_halloween-costumes {
+    color: white;
+}
+.b-users_signin_link {
+  text-align: center;
+}
+.b-users_signup_form {
+  background: url("framework/block/gallery/loading-small.gif") no-repeat -9999px -9999px;
+}
+
+#overlay {
+  opacity : 0.4;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+}
+
+#overlay div {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  margin-top: -50px;
+  background: url("slides/loading-black.gif") no-repeat center center;
+}
+
+#sso-cbox-content {
+  padding: 0 !important;
+}
+
+.open-sign-in-pnl.sso-sign-in.b-sso-login {
+  background: none;
+  border: 0 none;
+  display: inline;
+  float: none;
+  font-weight: normal;
+  height: auto;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  position: static;
+  text-indent: 0;
+  width: auto;
+}
+
+.brought-by {
+  left: 120px;
+  position: absolute;
+  top: 825px;
+}
+
+.b-facebook .brought-by {
+  left: 32px;
+  top: 836px;
+}
+.b-newsletter_field {
+  min-width: 275px;
+  float: left;
+}
+
+.b-newsletter_field_halloween-costumes {
+    color: white !important;
+}
+
+.b-profile_log-in {
+  display: inline-block !important;
+  background: url("framework/block/profile/login-button.png") no-repeat 0 0 !important;
+  text-indent: -9999px !important;
+  font-size: 0 !important;
+  width: 67px !important;
+  height: 24px !important;
+  vertical-align: middle !important;
+  margin-left: 4px !important;
+  line-height: 0 !important;
+}
+
+.b-users_rules_link {
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+}
+
+.b-facebook .b-users_upload_link {
+  display: none;
+}

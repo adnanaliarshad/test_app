@@ -1,0 +1,7 @@
+user:
+  ivillage_server: "http://www.staging.ivillage.com"
+  votigo_server: "https://smbaqa05code.votigo.com:44405"
+  votigo_api_key: "a35ce691d59460520504b66081f946e2"
+  arwen_host: "www.staging.ivillage.com"
+  arwen_user: "astrology"
+  arwen_password: "tr7$ar3w"

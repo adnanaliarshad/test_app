@@ -1,0 +1,10 @@
+- if params[:signed_request].nil? and params[:facebook].nil?
+  - name = "users-welcome-#{@contest_name}"
+  - tags = %w{votigo users-welcome users-welcome-page}
+  = astro_cache(name, :tags => tags, :expires_in => 20.minutes) do
+    = render "/framework/block/welcome/b_welcome"
+- else
+  - name  = "users-welcome-facebook-#{@contest_name}"
+  - tags =  %w{votigo users-welcome users-welcome-page-fb}
+  = astro_cache(name, :tags => tags, :expires_in => 20.minutes) do
+    = render "/framework/block/welcome/b_welcome_fb"

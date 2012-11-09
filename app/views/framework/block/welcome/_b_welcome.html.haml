@@ -1,0 +1,22 @@
+.b-view_container.wlc
+  .b-welcome_content#b-welcome_content{:style => "background: url('#{asset_path @contest['web']['welcome_bg']}') no-repeat left top white;"}
+    = link_to(image_tag("slides/enter-now.png"),users_path_builder(:users_new),
+              :class => "b-welcome_enter-now b-welcome_enter-now_#{@contest_name}")
+    = link_to(image_tag("slides/vote-for-your-fave.png"), users_path_builder(:slides),
+              :class => "b-welcome_vote-fav b-welcome_vote-fav_#{@contest_name}")
+  - if @contest['welcome_slider']
+    .b-welcome_slider{:style => "background-color:#{@contest['web']['slider_bg_color']};"}
+      %h3.b-welcome_heading
+        = @contest["web"]["welcome_heading"]
+      = image_tag @contest['web']['welcome_slider']
+      = link_to(image_tag(@contest['web']['welcome_slider_arrow']),
+                users_path_builder(:slides), :class => "b-welcome_vote")
+  .b-welcome_description
+    %h3.b-welcome_heading How to Enter
+    = @contest['web']['text_how_enter'].html_safe
+    %h3.b-welcome_heading How it Works
+    = @contest['web']['text_how_works'].html_safe
+    %h3.b-welcome_heading What You Can Win
+    = @contest['web']['text_what_win'].html_safe
+
+  = javascript_tag "$('#b-welcome_content').b_welcome();"

@@ -1,0 +1,11 @@
+.m-lightbox_shadow {
+    background: none repeat scroll 0 0 black;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000000;
+}
+.m-lightbox_popup {
+    z-index: 1000001;
+}

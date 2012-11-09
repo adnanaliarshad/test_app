@@ -1,0 +1,23 @@
+metis_key: 'b935886d1a12245bdd184c80c2c6fbfc33145b69'
+
+domains:
+  - "test.com"
+  - "localhost"
+
+
+display_year: 2012
+
+contest_id:
+  development: 10015
+  production: 28460
+  production-stage: 28460
+newsletters:
+ - 39
+ - 7
+ - 31
+ - 33
+ - 409
+ - 30
+
+user_messages:
+  successful: "Congratulations Your image has been uploaded... Now share..."

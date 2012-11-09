@@ -1,0 +1,26 @@
+#b-slides.b-slides
+  .b-view_content
+    .b-view_content_header_img{:style => "background: url('#{asset_path @contest['fb']['fb_banner']}') no-repeat center 0;"}
+      %a.b-view_content_header_link{:href => users_path_builder(:users_new, {:facebook => true})}
+    %a.b-slides_change-view{:href => users_path_builder(:gallery, {:facebook => true})}
+      Gallery View
+    .group
+      #carousel.jcarousel-skin-tango
+        .jcarousel-clip-wrapper
+          .jcarousel-clip
+            %ul
+          .jcarousel-prev.jcarousel-prev-disabled
+          .jcarousel-next.jcarousel-next-disabled
+    .b-info
+      #b-slides_question
+        = @contest['slide_question']
+      %span.b-info_entry_id
+      %h3.b-info_entryname
+        Lorem Ipsum Blah Blah this n that
+      %P.b-info_description
+        Lorem Ipsum Blah Blah this n that. Lorem Ipsum Blah Blah this n that Lorem Ipsum Blah Blah this n that. Lorem Ipsum Blah Blah this n that.
+      .b-info_user-info
+        %p
+          Uploaded by: User Name
+
+  = javascript_tag "jQuery('.b-slides').b_slideshow();"

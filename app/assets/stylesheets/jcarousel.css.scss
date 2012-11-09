@@ -1,0 +1,129 @@
+.jcarousel-skin-tango .jcarousel-container {
+  //-moz-border-radius: 10px;
+  //-webkit-border-radius: 10px;
+  //border-radius: 10px;
+  //background: #F0F6F9;
+  //border: 1px solid #346F97;
+  width: 482px;
+  height: 372px;
+  padding: 0px 18px;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl {
+  direction: rtl;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-wrapper {
+  width: 442px;
+  height: 332px;
+  padding: 17px 20px 23px;
+  background: url(slides/slides-bg.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-clip {
+  overflow: hidden;
+  width: 442px;
+  height: 332px;
+}
+
+.jcarousel-skin-tango .jcarousel-item {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: 0;
+  width: 442px;
+  height: 332px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+  background: #000 url(slides/loading-black.gif) no-repeat center center;
+}
+
+/**
+ *  Buttons
+ */
+.jcarousel-skin-tango .jcarousel-next {
+  position: absolute;
+  top: 160px;
+  right: 5px;
+  width: 49px;
+  height: 49px;
+  cursor: pointer;
+  background: transparent url(slides/next.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-next {
+  left: 5px;
+  right: auto;
+  background-image: url(slides/prev.png);
+}
+
+.jcarousel-skin-tango .jcarousel-next:hover,
+.jcarousel-skin-tango .jcarousel-next:focus {
+  //background-position: -32px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-next:active {
+  //background-position: -64px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-next-disabled,
+.jcarousel-skin-tango .jcarousel-next-disabled-:hover,
+.jcarousel-skin-tango .jcarousel-next-disabled:focus,
+.jcarousel-skin-tango .jcarousel-next-disabled:active {
+  //cursor: default;
+  //background-position: -96px 0;
+  display: none !important;
+}
+
+.jcarousel-skin-tango .jcarousel-prev {
+  position: absolute;
+  top: 160px;
+  left: 5px;
+  width: 49px;
+  height: 49px;
+  cursor: pointer;
+  background: transparent url(slides/prev.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-prev {
+  left: auto;
+  right: 5px;
+  background-image: url(slides/next.png);
+}
+
+.jcarousel-skin-tango .jcarousel-prev:hover,
+.jcarousel-skin-tango .jcarousel-prev:focus {
+  //background-position: -32px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev:active {
+  //background-position: -64px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled,
+.jcarousel-skin-tango .jcarousel-prev-disabled:hover,
+.jcarousel-skin-tango .jcarousel-prev-disabled:focus,
+.jcarousel-skin-tango .jcarousel-prev-disabled:active {
+  //cursor: default;
+  //background-position: -96px 0;
+  display: none !important;
+}
+
+.jcarousel-skin-tango .img-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  width: 442px;
+  height: 332px;
+}
+.jcarousel-skin-tango img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }

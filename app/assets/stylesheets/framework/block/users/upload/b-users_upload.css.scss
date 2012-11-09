@@ -1,0 +1,59 @@
+$input-medium: 158px;
+
+.b-users_upload_form_fieldset {
+  border: 0 none;
+  margin: 0;
+  padding:-1px 0 0 10px;
+}
+.b-users_upload_form_fieldset #agree {
+    margin-left: -5px;
+}
+.b-users_upload_form_fieldset.b-profile_row {
+  margin-bottom: 0px;
+}
+.b-users_upload_form_fieldset.b-users_newsletter {
+  margin: 0 auto;
+  width: 650px;
+  text-align: left;
+}
+.b-users_newsletter .b-profile_row {
+  margin-bottom: 0px;
+}
+
+.b-profile_row_submit {
+  margin: 10px auto 0;
+  width: 133px;
+}
+
+.b-users_upload_description {
+  text-align: center;
+  padding: 0 90px 10px;
+}
+
+.b-facebook .b-users_upload_description {
+  padding: 0 160px 10px;
+}
+.b-users_upload_form_required_star {
+  color: #B94A48;
+  padding-right: 4px;
+}
+.b-users_upload_form_required {
+  padding-bottom: 10px;
+}
+.b-users_upload_link {
+  text-align: center;
+}
+
+.b-profile_agree {
+  margin: 20px auto 0;
+  width: 380px;
+}
+
+h2.b-notification_heading {
+   font-family: Georgia,"Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-size: 16px;
+   font-style: italic;
+   font-weight: bold;
+   padding: 16px 0 0 0px;
+   line-height: 20px;
+ }

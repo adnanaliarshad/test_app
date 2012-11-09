@@ -1,0 +1,4 @@
+== Sample URLs
+
+Local machine (set 127.0.0.1 -> local.ivillage.com in /etc/hosts):
+http://local.ivillage.com:3000/photo-contests/endless-summer

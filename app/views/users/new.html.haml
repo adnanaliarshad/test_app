@@ -1,0 +1,5 @@
+.l-one-column
+  - name = "users-new-entry-#{@contest_name}"
+  - tags = %w{votigo users-new users-new-page}
+  = astro_cache(name, :tags => tags, :expires_in => 20.minutes) do
+    = render "/framework/block/users/profile/b_users_profile"

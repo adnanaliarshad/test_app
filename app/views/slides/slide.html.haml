@@ -1,0 +1,15 @@
+.b-view_container
+  - if params[:signed_request].nil? and params[:facebook].nil?
+    - name  = "#{@contest['name']}_single_slides_#{@entry['Entry']['entry_id']}"
+    - tags =  %w{votigo slides-slide slides-slide-top}
+    = astro_cache(name, :tags => tags, :expires_in => 20.minutes) do
+      = render "/framework/block/slides/b_slide"
+  - else
+    - name  = "#{@contest['name']}_facebook_single_slides_#{@entry['Entry']['entry_id']}"
+    - tags =  %w{votigo slides-slide slides-slide-top}
+    = astro_cache(name, :tags => tags, :expires_in => 20.minutes) do
+      %h2.b-view_heading.profile
+        = @contest['entry_title']
+      %p.b-users_upload_description
+        = @contest['entry_text']
+      = render "/framework/block/slides/facebook/b_slide_fb"

@@ -1,0 +1,33 @@
+.b-session_new_form .form_title {
+    color: #EE125C;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 90px;
+    text-align: center;
+}
+.b-session_new_form .form_close {
+    background: url("/assets/framework/block/session/form_close.png") left top no-repeat;
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 17px;
+    height: 17px;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.b-session_new_form {
+    position: absolute;
+    display: none;
+    width: 400px;
+    background: white;
+    border: 1px solid #838383;
+    padding: 10px;
+    z-index: 100000000;
+}
+
+.b-session_new_error {
+    color: #ed2025;
+    display: none;
+}

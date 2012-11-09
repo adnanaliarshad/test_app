@@ -1,0 +1,73 @@
+!!! XML
+!!!
+%html
+  %head
+    = mobify_tag
+    = javascript_tag "Votigo = {};"
+    :javascript
+      document.domain = "ivillage.com";
+    %title
+      = @contest['page_title']
+    = javascript_include_tag "//cdn.gigya.com/JS/socialize.js?apikey=2_TAACrzG-_a9IkzLfWB3YsVoaBvKoZSfmy-eAfFSA0_XZPEk1Lpd5dWthUDHdRtu-"
+    = javascript_include_tag "jquery"
+    = stylesheet_link_tag "application"
+    = get_host
+    = stylesheet_link_tag "global_min"
+    = stylesheet_link_tag "global_panels_min"
+    = javascript_include_tag "general_min"
+    = javascript_include_tag "application"
+    = javascript_include_tag "ivillage/iv_pm_global_head.js?#{Time.now.to_f}"
+    = csrf_meta_tags
+    = javascript_include_tag "iv_pm_global_header"
+    = javascript_include_tag "ivillage/iv_nv_header"
+    = script_runner
+  </div></div>
+
+  - rand_no = rand(1000000000000)
+  .mod-horizontal-ad#ad-top-banner
+    = dart_ad("top", rand_no)
+  .l-notice
+    = render :partial => 'framework/block/notice/b_notice'
+  = contest_name
+
+  %h1.b-top_banner
+    = image_tag @contest['web']['top_header'], :alt => 'Top Header'
+    - unless @contest.blank?
+      %h2.b-view_heading
+        = @contest['title']
+
+  = render "/layouts/shared/b_gigya"
+  .b-view_wrapper
+    -if action_name == "welcome" or controller_name == "users"
+      .b-view_wrapper_inner
+        .l-wrapper
+        = yield
+    -else
+      .b-needed
+      .col-636-300-wrap.clearfix
+        - klass =  (params[:controller]=="slides" and params[:action]!="welcome") ? "col-636" : "col-936"
+        .col.content-main{:class => klass}
+          .l-wrapper
+          = yield
+        - if params[:controller] == "slides" and params[:action] != "welcome"
+          .col.col-300
+
+  .mod-horizontal-ad#ad-bottom-banner
+    = dart_ad("bottom", rand_no)
+
+  #contest_name{:style => "display:none"}<
+    = @contest_name
+  </div>
+  = omniture_tracking
+  = google_conversion_tracking_pixel
+  = javascript_include_tag "iv_pm_global_footer"
+  = javascript_include_tag "tracking/clicktracking.js"
+  :css
+    body {
+        background: url("#{asset_path @contest['web']['web_bg']}") #{@contest['web']['web_bg_repeat']} center center fixed #{@contest['web']['bg_color']} !important;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+  </body>

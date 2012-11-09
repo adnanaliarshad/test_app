@@ -1,0 +1,79 @@
+.b-gallery_header.group
+  .needed
+    %a.b-slides_change-view{:href => users_path_builder(:slides, :facebook => true)}
+      Slide View
+  .display_order
+    = label_tag "sort", "Display:"
+    = select_tag "sort", options_for_select([["Newest","new_created"], ["Oldest","created"], ["Most Votes","average_rating"], ["Most Popular","vote_count"]],session[:sort]), :class => "b-gallery_display_order"
+  - if @contest["show_category"] == "true"
+    .display_categories
+      = label_tag "categories", "Categories:"
+      = select_tag "categories", options_for_select(get_contest_categories_list(@contest_id),params[:category])
+  .links
+    = "#{@current_page} - #{@total_pages} "
+    - klass = ""
+    - @prev_url == "" ? klass="disabled" : klass=""
+    = link_to('prev', @prev_url, :class => klass)
+    - @first_url == "" ? klass="disabled" : klass=""
+    = link_to('first', @first_url, :class => klass)
+    - @next_url == "" ? klass="disabled" : klass=""
+    = link_to('next', @next_url, :class => klass)
+    - @last_url == "" ? klass="disabled" : klass=""
+    = link_to('last', @last_url, :class => klass)
+.b-gallery_entries_wrapper.group
+  - @entries["Entries"].each_with_index do |entry, index|
+    .b-gallery_entry_wrapper{:style => index % 3 == 0 ? "clear:both" : nil}
+      .b-gallery_entry_image_wrapper
+        .b-gallery_entry_image
+          - entry_img = entry["Entry"]["Photo"]["thumb_pic"]
+          - entry_img.slice! "http://"
+          - thmb_img = "https://s3.amazonaws.com/" + entry_img
+          = link_to image_tag(thmb_img),
+            users_path_builder(:slide, {:id => entry["Entry"]["entry_id"], :facebook => true})
+      .b-gallery_entry_social
+        %h4.b-gallery_entry_social_title
+          = entry["Entry"]["entryname"].capitalize
+        .b-gallery_entry_social_rate
+          - vote = @current_user.votigo.id.nil? ? false : already_voted?(@entry["Entry"]["entry_id"])
+          - if vote == false
+            = link_to(image_tag('framework/block/gallery/green_thumb.png', :class => 'rate_image'),
+              users_path_builder(:vote_entry, {:entry_id => entry["Entry"]["entry_id"], :vote_type => "love_it", :facebook => true}))
+            = link_to(image_tag('framework/block/gallery/red_thumb.png', :class => 'rate_image'),
+              users_path_builder(:vote_entry, {:entry_id => entry["Entry"]["entry_id"], :vote_type => "love_it", :facebook => true}))
+          .rate{:style => "display:none"}
+            %span.rate_up<>
+              - vote_up = entry["Entry"]["vote_count"].to_f
+              - vote_down = entry["Entry"]["leave_it_count"].to_f
+              - vote = (vote_up+vote_down == 0) ? 0 : ((vote_up/(vote_up+vote_down))*100).to_i
+              = "#{vote}%"
+            %span.rate_down<>
+              - vote = (vote_up+vote_down == 0) ? 0 : ((vote_down/(vote_up+vote_down))*100).to_i
+              = "#{vote}%"
+          = image_tag 'framework/block/gallery/loading-small.gif', :alt => 'Loading...', :class => 'b-gallery_rate_loader'
+        .b-gallery_entry_social_share
+          = link_to image_tag('framework/block/gallery/facebook.png'), '#', :image => entry["Entry"]["Photo"]["medium_pic"],
+           :image_name => entry["Entry"]["entryname"].capitalize,
+           :id => 'b-gallery_entry_social_share_fb',
+           :image_id => entry["Entry"]["entry_id"]
+          -#= link_to image_tag('framework/block/gallery/twitter.png'),'#', :image => entry["Entry"]["Photo"]["medium_pic"],
+          -# :image_name => entry["Entry"]["entryname"].capitalize,
+          -# :id => 'b-gallery_entry_social_share_tw',
+          -# :image_id => entry["Entry"]["entry_id"]
+          -#= link_to image_tag('framework/block/gallery/p.png'),'#', :image => entry["Entry"]["Photo"]["medium_pic"],
+          -# :image_name => entry["Entry"]["entryname"].capitalize,
+          -# :id => 'b-gallery_entry_social_share_pi',
+          -# :image_id => entry["Entry"]["entry_id"]
+.b-gallery_footer.group
+  .links
+    = "#{@current_page} - #{@total_pages} "
+    - klass = ""
+    - @prev_url == "" ? klass="disabled" : klass=""
+    = link_to('prev', @prev_url, :class => klass)
+    - @first_url == "" ? klass="disabled" : klass=""
+    = link_to('first', @first_url, :class => klass)
+    - @next_url == "" ? klass="disabled" : klass=""
+    = link_to('next', @next_url, :class => klass)
+    - @last_url == "" ? klass="disabled" : klass=""
+    = link_to('last', @last_url, :class => klass)
+.overlay{:style => 'display: none'}
+  %div

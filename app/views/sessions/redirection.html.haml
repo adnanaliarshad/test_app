@@ -1,0 +1,2 @@
+-#= javascript_tag "alert('111');window.location.href=#{@redirect_url};"
+= javascript_tag "setTimeout(function () { top.location.href='#{@redirect_url}' }, 2000);"
